@@ -1,0 +1,11 @@
+# vscode dir
+.vscode/
+
+# python dirs
+__pycache__/
+.pytest_cache/
+
+# dbt files/dirs
+target/
+dbt_modules/
+logs/
