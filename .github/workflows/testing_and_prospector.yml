@@ -15,7 +15,7 @@ jobs:
     - name: Bring up docker images
       run: docker-compose up -d
     - name: Run test suite
-      run: docker-compose run snowshu pytest
+      run: docker-compose run snowshupostgres pytest
   run-prospector:
     runs-on: ubuntu-latest
 
@@ -24,4 +24,4 @@ jobs:
     - name: Bring up docker images
       run: docker-compose up -d
     - name: Run test suite
-      run: docker-compose run snowshu prospector
+      run: docker-compose run snowshupostgres prospector
