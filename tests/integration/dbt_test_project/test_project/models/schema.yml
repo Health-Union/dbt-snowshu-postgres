@@ -1,0 +1,65 @@
+
+version: 2
+
+models:
+    # views
+    - name: int_db_model_view
+      description: "Internal table model (view)"
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    - name: ext_db_model_view
+      description: "External table model (view)"
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    - name: combined_model_view
+      description: "Combination of internal and external tables joined on parity (view)"
+      columns:
+        - name: ext_id
+          description: "Joined external table id"
+        - name: int_id
+          description: "Joined internal table id"
+        - name: ext_parity
+          description: "Even/oddness of the external table id"
+        - name: int_parity
+          description: "Even/oddness of the internal table id"
+
+    # tables
+    - name: int_db_model_table
+      description: "Internal table model (table)"
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    - name: ext_db_model_table
+      description: "External table model (table)"
+      columns:
+          - name: id
+            description: "The primary key for this table"
+            tests:
+                - unique
+                - not_null
+
+    - name: combined_model_table
+      description: "Combination of internal and external tables joined on parity (table)"
+      columns:
+        - name: ext_id
+          description: "Joined external table id"
+        - name: int_id
+          description: "Joined internal table id"
+        - name: ext_parity
+          description: "Even/oddness of the external table id"
+        - name: int_parity
+          description: "Even/oddness of the internal table id"

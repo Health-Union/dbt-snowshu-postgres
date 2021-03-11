@@ -1,0 +1,14 @@
+default:
+  outputs:
+
+    dev:
+      type: snowshupostgres
+      threads: 1
+      host: postgres-container
+      port: 5432
+      user: postgres
+      pass: postgres
+      dbname: postgres
+      schema: public
+
+  target: dev

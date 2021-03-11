@@ -1,0 +1,29 @@
+version: "3.5"
+services:
+
+  postgres-container:
+    image: postgres:12.6
+    environment: 
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: dbt
+    ports:
+      - 5432:5432
+    networks:
+      - snowshu-postgres-adapter
+
+  snowshupostgres:
+    image: dbt-snowshu-postgres-adapter
+    build:
+      context: ./
+    working_dir: /app
+    volumes:
+      - ./:/app
+      - ./tests/integration/dbt_test_project/test_project/profiles.yml:/root/.dbt/profiles.yml
+    depends_on:
+      - postgres-container
+    networks:
+      - snowshu-postgres-adapter
+
+networks:
+  snowshu-postgres-adapter:

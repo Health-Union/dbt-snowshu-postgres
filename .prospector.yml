@@ -1,0 +1,22 @@
+strictness: veryhigh
+test-warnings: true
+doc-warnings: true
+member-warnings: true
+
+ignore-patterns:
+  - setup.py
+
+pylint:
+  disable:
+    # use pep8 line length
+    - line-too-long
+
+pep8:
+  options:
+    max-line-length: 120
+
+pep257:
+  disable:
+    - D203 # blank line before class docstring
+    - D210 # no whitespace
+    - D212 # first line for multi-line

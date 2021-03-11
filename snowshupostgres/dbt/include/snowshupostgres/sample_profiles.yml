@@ -1,0 +1,28 @@
+default:
+  outputs:
+
+    # snowshupostgres is meant for development only
+    # and is only needed for cross-db query support
+    dev:
+      type: snowshupostgres
+      threads: [1 or more]
+      host: [host]
+      port: [port]
+      user: [dev_username]
+      pass: [dev_password]
+      dbname: [dbname]
+      schema: [dev_schema]
+
+    # an expected production profile type would be snowflake
+    # since it allows cross-database queries
+    prod:
+      type: snowflake
+      threads: [1 or more]
+      host: [host]
+      port: [port]
+      user: [prod_username]
+      pass: [prod_password]
+      dbname: [dbname]
+      schema: [prod_schema]
+
+  target: dev
