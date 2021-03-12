@@ -31,7 +31,6 @@ def verify_combined_model(model_records):
                or (rec.ext_id % 2 == 1 and rec.ext_parity == "odd")
 
 
-# TODO add sample_profiles
 def test_dbt_tables(dbt_run):  # pylint:disable=redefined-outer-name
     """ Tests the table models generate correctly. """
     engine, setup = dbt_run
