@@ -28,7 +28,6 @@ file_dir = os.path.abspath(os.path.dirname(__file__))
 with open(os.path.join(file_dir, "README.md")) as f:
     long_description = f.read()
 
-# TODO verify details
 setup(
     name=package_name,
     version=package_version,
@@ -46,7 +45,6 @@ setup(
             'include/snowshupostgres/dbt_project.yml',
         ]
     },
-    # TODO strict pins?
     install_requires=[
         f"dbt-core=={package_version}",
         f"dbt-postgres=={package_version}",

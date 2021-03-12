@@ -9,7 +9,7 @@ from dbt.adapters.snowshupostgres.relation import SnowshuPostgresColumn, Snowshu
 from dbt.adapters.snowshupostgres.connections import SnowshuPostgresConnectionManager
 
 
-# TODO reduce this qualification?
+# TODO find a better workaround for this
 # Repoint the macro name since the postgres version is inaccessible
 dbt.adapters.postgres.impl.GET_RELATIONS_MACRO_NAME = 'snowshupostgres_get_relations'
 

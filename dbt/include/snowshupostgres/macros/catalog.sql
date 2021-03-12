@@ -14,7 +14,7 @@
         sch.nspname as table_schema,
         tbl.relname as table_name,
         {#
-          TODO this pulls in fdw tables, but classifies them as 'BASE TABLE'.
+          this pulls in fdw tables, but classifies them as 'BASE TABLE'.
           Has not been an issue in any case yet
         #}
         case tbl.relkind
